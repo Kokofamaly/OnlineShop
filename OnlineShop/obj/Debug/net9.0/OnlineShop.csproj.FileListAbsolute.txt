@@ -1,0 +1,7 @@
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.csproj.AssemblyReference.cache
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.AssemblyInfoInputs.cache
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.AssemblyInfo.cs
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.csproj.CoreCompileInputs.cache
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.MvcApplicationPartsAssemblyInfo.cs
+/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/OnlineShop.MvcApplicationPartsAssemblyInfo.cache
