@@ -13,7 +13,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using OnlineShop.Infrastracture;
+using OnlineShop.Infrastructure;
+using OnlineShop.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,8 +36,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 builder.Services.AddAuthorization();
 builder.Services.AddLogging();
-builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=baseDb.db"));
+builder.Services.AddIdentityInfrastructure();
+
+builder.Services.AddScoped<AuthService>();
 
 
 var app = builder.Build();

@@ -1,26 +1,21 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using OnlineShop.Infrastructure;
 
 namespace OnlineShop.Models;
 
-public class User
+public class User : IdentityUser<Guid>
 {
-    public Guid Id { get; private set; }
-    [Required]
-    [MinLength(3)]
-    public string? Username { get; private set; }
-    [Required]
-    public string? Email { get; private set; }
-    public string? PasswordHash { get; private set; }
-    public string? Role { get; private set; }
+    public string? Role { get; private set; } = "User";
 
     public User() {}
 
-    public User(string username, string email, string passwordHash, string role)
+    public User(string username, string email)
     {
         Id = Guid.NewGuid();
-        Username = username;
-        PasswordHash = passwordHash;
-        Role = role;
+        UserName = username;
+        Email = email;
     }
+
+    public void SetRole(string role) => Role = role;
 }

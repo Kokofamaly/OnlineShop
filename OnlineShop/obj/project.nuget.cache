@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HZVzo26dKjg=",
+  "dgSpecHash": "4XMHO9xiozg=",
   "success": true,
   "projectFilePath": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/OnlineShop.csproj",
   "expectedPackageFiles": [
     "/Users/kokofamaly/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/9.0.11/microsoft.aspnetcore.authentication.jwtbearer.9.0.11.nupkg.sha512",
+    "/Users/kokofamaly/.nuget/packages/microsoft.aspnetcore.cryptography.internal/9.0.11/microsoft.aspnetcore.cryptography.internal.9.0.11.nupkg.sha512",
+    "/Users/kokofamaly/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/9.0.11/microsoft.aspnetcore.cryptography.keyderivation.9.0.11.nupkg.sha512",
+    "/Users/kokofamaly/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/9.0.11/microsoft.aspnetcore.identity.entityframeworkcore.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.data.sqlite.core/9.0.11/microsoft.data.sqlite.core.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.entityframeworkcore/9.0.11/microsoft.entityframeworkcore.9.0.11.nupkg.sha512",
@@ -19,6 +22,8 @@
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.11/microsoft.extensions.dependencyinjection.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.11/microsoft.extensions.dependencyinjection.abstractions.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.dependencymodel/9.0.11/microsoft.extensions.dependencymodel.9.0.11.nupkg.sha512",
+    "/Users/kokofamaly/.nuget/packages/microsoft.extensions.identity.core/9.0.11/microsoft.extensions.identity.core.9.0.11.nupkg.sha512",
+    "/Users/kokofamaly/.nuget/packages/microsoft.extensions.identity.stores/9.0.11/microsoft.extensions.identity.stores.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.logging/9.0.11/microsoft.extensions.logging.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.11/microsoft.extensions.logging.abstractions.9.0.11.nupkg.sha512",
     "/Users/kokofamaly/.nuget/packages/microsoft.extensions.options/9.0.11/microsoft.extensions.options.9.0.11.nupkg.sha512",
