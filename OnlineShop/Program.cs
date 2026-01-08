@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using OnlineShop.Infrastructure;
-using OnlineShop.Application;
+using OnlineShop.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

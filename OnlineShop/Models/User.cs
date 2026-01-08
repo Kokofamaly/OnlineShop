@@ -6,8 +6,6 @@ namespace OnlineShop.Models;
 
 public class User : IdentityUser<Guid>
 {
-    public string? Role { get; private set; } = "User";
-
     public User() {}
 
     public User(string username, string email)
@@ -16,6 +14,4 @@ public class User : IdentityUser<Guid>
         UserName = username;
         Email = email;
     }
-
-    public void SetRole(string role) => Role = role;
 }

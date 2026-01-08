@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using OnlineShop.Models;
 
-namespace OnlineShop.Application;
+namespace OnlineShop.Services;
 
 public class AuthService
 {
