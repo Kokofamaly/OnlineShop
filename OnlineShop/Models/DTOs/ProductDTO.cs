@@ -1,17 +1,14 @@
-namespace OnlineShop.Models;
+namespace OnlineShop.Models.DTOs;
 
-public class Product
+public class ProductDTO
 {
-    public int Id { get; set; }
     public string? Name { get; set; }
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public int Stock { get; set; }
 
-    public Product() {}
-
-    public Product(
-        string name, 
+    public ProductDTO(
+        string name,
         string description,
         decimal price,
         int stock
