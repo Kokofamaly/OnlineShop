@@ -7,11 +7,13 @@ public class AuthService
 {
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
+    private readonly JwtService _jwtService;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager)
+    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, JwtService jwtService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _jwtService = jwtService;
     }
 
     public async Task<User> RegisterAsync(string username, string email, string password, string role = "User")
@@ -27,17 +29,15 @@ public class AuthService
         return user;
     }
 
-    public async Task<bool> LoginAsync(string email, string password)
+    public async Task<string?> LoginAsync(string email, string password)
     {
         var user = await _userManager.FindByEmailAsync(email);
-        if (user == null)
-            return false;
+        if (user == null) return null;
 
-        var result = await _signInManager.CheckPasswordSignInAsync(
-            user,
-            password,
-            lockoutOnFailure: true);
+        if (!await _userManager.CheckPasswordAsync(user, password))
+            return null;
 
-        return result.Succeeded;
+        var roles = await _userManager.GetRolesAsync(user);
+        return _jwtService.GenerateToken(user, roles);
     }
 }

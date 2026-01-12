@@ -27,11 +27,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = false,
-        ValidateAudience = false,
+        ValidateIssuer = true,
+        ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretkey"))
+        
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
 builder.Services.AddAuthorization();
@@ -39,6 +42,7 @@ builder.Services.AddLogging();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=baseDb.db"));
 builder.Services.AddIdentityInfrastructure();
 
+builder.Services.AddSingleton<IProductService, ProductService>();
 builder.Services.AddScoped<AuthService>();
 
 
@@ -60,6 +64,7 @@ app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
+app.MapProductEndpoints();
 
 app.Run();
 

@@ -19,4 +19,5 @@ public class ProductDTO
         Price = price;
         Stock = stock;
     }
+
 }
