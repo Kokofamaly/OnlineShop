@@ -44,6 +44,9 @@ builder.Services.AddScoped<AuthService>();
 
 var app = builder.Build();
 
+using var scope = app.Services.CreateScope();
+await DataSeeder.SeedRoles(scope.ServiceProvider);
+
 app.UseExceptionHandler();
 
 // Configure the HTTP request pipeline.

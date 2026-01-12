@@ -14,7 +14,7 @@ public class AuthService
         _signInManager = signInManager;
     }
 
-    public async Task<User> RegisterAsync(string username, string email, string password)
+    public async Task<User> RegisterAsync(string username, string email, string password, string role = "User")
     {
         var user = new User(username, email);
 
@@ -23,6 +23,7 @@ public class AuthService
             throw new InvalidOperationException(
                 string.Join(", ", result.Errors.Select(e => e.Description)));
 
+        await _userManager.AddToRoleAsync(user, role);
         return user;
     }
 
