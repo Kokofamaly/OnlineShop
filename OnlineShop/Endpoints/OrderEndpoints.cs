@@ -1,5 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using OnlineShop.Data;
 using OnlineShop.Models;
 using OnlineShop.Models.DTOs;
 using OnlineShop.Services;
@@ -19,32 +21,39 @@ public static class OrderEndpoints
         app.MapDelete("/orders/orderItem", DeleteOrderItem).RequireAuthorization();
     }
 
-    public static async Task<IResult> GetAllOrders(IOrderService service, ClaimsPrincipal user)
+    public static async Task<IResult> GetAllOrders(IOrderService service, ClaimsPrincipal user, ApplicationDbContext db)
     {
         var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var orders = await service.GetAllOrdersAsync();
+        var orders = await service.GetAllOrdersAsync(await db.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId));
 
         if(orders == null) return Results.BadRequest();
 
         return Results.Ok(orders);
     }
-    public static async Task<IResult> GetOrderById(IOrderService service, int id, User user)
+    public static async Task<IResult> GetOrderById(IOrderService service, int id, ClaimsPrincipal user, ApplicationDbContext db)
     {
-        var order = await service.GetOrderByIdAsync(id, user);
+        var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var order = await service.GetOrderByIdAsync(id, await db.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId));
         if(order == null) return Results.NotFound();
 
         return Results.Ok(order);
     }
-    public static async Task<IResult> CreateEmptyOrder(IOrderService service, Guid userId)
+    public static async Task<IResult> CreateEmptyOrder(IOrderService service, ClaimsPrincipal user, ApplicationDbContext db)
     {
-        var order = await service.CreateOrderAsync(userId);
+        var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        User user1 = await db.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId);
+
+        var order = await service.CreateOrderAsync(user1.Id);
         if(order == null) return Results.BadRequest();
 
         return Results.Ok(order);
     }
-    public static async Task<IResult> CreateOrder(IOrderService service, Guid userId, OrderItem orderItem)
+    public static async Task<IResult> CreateOrder(IOrderService service, ClaimsPrincipal user, ApplicationDbContext db, OrderItem orderItem)
     {
-        var order = await service.CreateOrderAsync(userId, orderItem);
+        var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        User user1 = await db.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId);
+
+        var order = await service.CreateOrderAsync(user1.Id, orderItem);
         if(order == null) return Results.BadRequest();
 
         return Results.Ok(order);
