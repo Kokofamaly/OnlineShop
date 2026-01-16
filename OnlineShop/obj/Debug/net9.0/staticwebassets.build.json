@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "Hash": "vtpcL9EkiG43vuo+pxMGBFU+4Q4v1mDz+ZbZhOmJdzA=",
+  "Source": "OnlineShop",
+  "BasePath": "_content/OnlineShop",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "OnlineShop/wwwroot",
+      "Source": "OnlineShop",
+      "ContentRoot": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/",
+      "BasePath": "_content/OnlineShop",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/6411strkyf-0nwtoa8wiy.gz",
+      "SourceId": "OnlineShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/OnlineShop",
+      "RelativePath": "index#[.{fingerprint=0nwtoa8wiy}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ckcrqjr8pd",
+      "Integrity": "XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/index.html",
+      "SourceId": "OnlineShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/",
+      "BasePath": "_content/OnlineShop",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0nwtoa8wiy",
+      "Integrity": "hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.0nwtoa8wiy.html",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/6411strkyf-0nwtoa8wiy.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005263157895"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "189"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0nwtoa8wiy"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI="
+        }
+      ]
+    },
+    {
+      "Route": "index.0nwtoa8wiy.html",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0nwtoa8wiy"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI="
+        }
+      ]
+    },
+    {
+      "Route": "index.0nwtoa8wiy.html.gz",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/6411strkyf-0nwtoa8wiy.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0nwtoa8wiy"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/6411strkyf-0nwtoa8wiy.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005263157895"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "189"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hLXO2Bd36POPRON7XlS/mLwECeGxntUVP5vuR58jmRI="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "/Users/kokofamaly/code/CSharp сode/Online Shop/OnlineShop/obj/Debug/net9.0/compressed/6411strkyf-0nwtoa8wiy.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 Jan 2026 22:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XK6d1Fpa240oA0GyVSNLflL4r+BSN0ZzxwMHwBGgu0I="
+        }
+      ]
+    }
+  ]
+}

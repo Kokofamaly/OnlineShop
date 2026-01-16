@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Data;
 using OnlineShop.Models;
@@ -48,7 +49,7 @@ public static class OrderEndpoints
 
         return Results.Ok(order);
     }
-    public static async Task<IResult> CreateOrder(IOrderService service, ClaimsPrincipal user, ApplicationDbContext db, OrderItem orderItem)
+    public static async Task<IResult> CreateOrder(IOrderService service, ClaimsPrincipal user, ApplicationDbContext db, [FromBody] OrderItem orderItem)
     {
         var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         User user1 = await db.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId);
@@ -58,23 +59,23 @@ public static class OrderEndpoints
 
         return Results.Ok(order);
     }
-    public static async Task<IResult> AddOrderItemToOrder(IOrderService service, OrderItem orderItem, Order order)
+    public static async Task<IResult> AddOrderItemToOrder(IOrderService service, ApplicationDbContext db, [FromBody] OrderItem orderItem)
     {
-       var orderDTO = await service.AddOrderItemAsync(orderItem, order);
+       var orderDTO = await service.AddOrderItemAsync(orderItem, await db.Orders.FindAsync(orderItem.OrderId));
        if(orderDTO == null) return Results.BadRequest();
 
        return Results.Ok(orderDTO);
     }
-    public static async Task<IResult> DeleteOrder(IOrderService service, Order order)
+    public static async Task<IResult> DeleteOrder(IOrderService service, [FromBody] Order order)
     {
         var orderDTO = await service.DeleteOrderAsync(order);
         if(orderDTO == null) return Results.BadRequest();
 
         return Results.Ok(orderDTO);
     }
-    public static async Task<IResult> DeleteOrderItem(IOrderService service, OrderItem orderItem, Order order)
+    public static async Task<IResult> DeleteOrderItem(IOrderService service, ApplicationDbContext db, [FromBody] OrderItem orderItem)
     {
-        var orderDTO = await service.DeleteOrderItemAsync(orderItem, order);
+        var orderDTO = await service.DeleteOrderItemAsync(orderItem, await db.Orders.FindAsync(orderItem.OrderId));
         if(orderDTO == null) return Results.BadRequest();
 
         return Results.Ok(orderDTO);

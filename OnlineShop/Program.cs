@@ -41,17 +41,33 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddAuthorization();
 builder.Services.AddLogging();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=baseDb.db"));
-builder.Services.AddIdentityInfrastructure();
+builder.Services.AddIdentityInfrastructure(); // uses AddIdentity<User, IdentityRole<Guid>>
 
-builder.Services.AddSingleton<IProductService, ProductService>();
-builder.Services.AddSingleton<IOrderService, OrderService>();
+builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
+
+Console.WriteLine(builder.Configuration["Jwt:Key"]);
 
 var app = builder.Build();
 
 using var scope = app.Services.CreateScope();
-await DataSeeder.SeedRoles(scope.ServiceProvider);
+var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+db.Database.EnsureDeleted();   // WARNING: deletes all existing data
+db.Database.EnsureCreated();   // creates tables including AspNetRoles
+
+try
+{
+    await DataSeeder.SeedRoles(scope.ServiceProvider);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
 
 app.UseExceptionHandler();
 

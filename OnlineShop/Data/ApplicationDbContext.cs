@@ -25,9 +25,12 @@ public class ApplicationDbContext
         modelBuilder.Entity<Order>(entity =>
         {
             entity.HasKey(x => x.Id);
-            entity.HasOne<User>()
-                  .WithMany()
-                  .HasForeignKey(x => x.UserId);
+
+            entity.HasOne(o => o.User)       // <- navigation property
+                .WithMany()                // or .WithMany(u => u.Orders) if you add that
+                .HasForeignKey(o => o.UserId)
+                .IsRequired();
         });
+
     }
 }
