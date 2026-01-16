@@ -1,4 +1,5 @@
 using OnlineShop.Data;
+using OnlineShop.Models.DTOs;
 
 namespace OnlineShop.Models;
 
@@ -20,5 +21,21 @@ public class Order
     public void AddItem(OrderItem item)
     {
         OrderItems.Add(item);
+    }
+
+    public async Task<List<OrderItemDTO>> OrderItemsListToDto(List<OrderItem> orderItems)
+    {
+        List<OrderItemDTO> orderItemDTOs = new List<OrderItemDTO>(orderItems.Count);
+        foreach(OrderItem orderItem in orderItems)
+        {
+            orderItemDTOs.Add(new(
+                orderItem.Id, 
+                new ProductDTO(orderItem.Product.Name, orderItem.Product.Description, orderItem.Product.Price, orderItem.Product.Stock), 
+                orderItem.UnitPrice, 
+                orderItem.Quantity
+            ));
+        }
+
+        return orderItemDTOs;
     }
 }

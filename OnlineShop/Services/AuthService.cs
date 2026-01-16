@@ -6,13 +6,11 @@ namespace OnlineShop.Services;
 public class AuthService
 {
     private readonly UserManager<User> _userManager;
-    private readonly SignInManager<User> _signInManager;
     private readonly JwtService _jwtService;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, JwtService jwtService)
+    public AuthService(UserManager<User> userManager, JwtService jwtService)
     {
         _userManager = userManager;
-        _signInManager = signInManager;
         _jwtService = jwtService;
     }
 

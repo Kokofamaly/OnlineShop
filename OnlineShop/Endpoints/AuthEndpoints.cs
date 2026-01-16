@@ -2,7 +2,7 @@ using OnlineShop.Models;
 using OnlineShop.Models.DTOs;
 using OnlineShop.Services;
 
-
+namespace OnlineShop.Endpoints;
 public static class AuthEndpoints
 {
     public static void MapAuthEndpoints(this WebApplication app)

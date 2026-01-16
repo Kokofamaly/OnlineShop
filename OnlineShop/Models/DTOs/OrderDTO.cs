@@ -14,4 +14,8 @@ public class OrderDTO
         TotalPrice = totalPrice;
         OrderItemsDTO = orderItemsDTO;
     }
+
+    public async Task<OrderDTO> ToDto(Order order) => new(order.Id, new(order.User.UserName, order.User.Email, order.User.Id), order.TotalPrice, await order.OrderItemsListToDto(order.OrderItems));
+
+
 }
