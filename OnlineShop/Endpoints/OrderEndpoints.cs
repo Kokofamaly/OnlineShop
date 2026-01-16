@@ -12,8 +12,8 @@ public static class OrderEndpoints
 {
     public static void MapOrderEndpoints(this WebApplication app)
     {
-        app.MapGet("/orders", GetAllOrders);
-        app.MapGet("/orders/{id:int}", GetOrderById);
+        app.MapGet("/orders", GetAllOrders).RequireAuthorization();
+        app.MapGet("/orders/{id:int}", GetOrderById).RequireAuthorization();
         app.MapPost("/orders/empty", CreateEmptyOrder).RequireAuthorization();
         app.MapPost("/orders", CreateOrder).RequireAuthorization();
         app.MapPost("/orders/orderItem", AddOrderItemToOrder).RequireAuthorization();
